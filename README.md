@@ -1,2 +1,0 @@
-# inter_commerce_app_design_system
-design system for inter_commerce_app

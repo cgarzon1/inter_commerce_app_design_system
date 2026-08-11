@@ -1,0 +1,55 @@
+name: inter_commerce_app_design_system
+description: >-
+  InterCommerce design tokens, themes, and reusable Flutter components for a
+  luxury e-commerce mobile experience.
+version: 0.0.1
+publish_to: "none"
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  fonts:
+    - family: ICCormorantGaramond
+      fonts:
+        - asset: assets/fonts/CormorantGaramond[wght].ttf
+          weight: 300
+        - asset: assets/fonts/CormorantGaramond[wght].ttf
+          weight: 400
+        - asset: assets/fonts/CormorantGaramond[wght].ttf
+          weight: 500
+        - asset: assets/fonts/CormorantGaramond[wght].ttf
+          weight: 600
+        - asset: assets/fonts/CormorantGaramond[wght].ttf
+          weight: 700
+        - asset: assets/fonts/CormorantGaramond-Italic[wght].ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/CormorantGaramond-Italic[wght].ttf
+          weight: 500
+          style: italic
+    - family: ICManrope
+      fonts:
+        - asset: assets/fonts/Manrope[wght].ttf
+          weight: 300
+        - asset: assets/fonts/Manrope[wght].ttf
+          weight: 400
+        - asset: assets/fonts/Manrope[wght].ttf
+          weight: 500
+        - asset: assets/fonts/Manrope[wght].ttf
+          weight: 600
+        - asset: assets/fonts/Manrope[wght].ttf
+          weight: 700
+        - asset: assets/fonts/Manrope[wght].ttf
+          weight: 800

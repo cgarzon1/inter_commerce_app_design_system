@@ -79,8 +79,10 @@ class InterCommerceChoiceChip extends StatelessWidget {
   }
 }
 
-/// Single-select row of [InterCommerceChoiceChip]s, e.g. category filters
-/// or a size picker.
+/// Single-select, horizontally scrollable row of [InterCommerceChoiceChip]s
+/// e.g. category filters or a size picker. Never wraps to a second line —
+/// the row scrolls instead, so it stays a fixed height no matter how many
+/// [options] there are.
 class InterCommerceChipGroup<T> extends StatelessWidget {
   const InterCommerceChipGroup({
     super.key,
@@ -101,18 +103,21 @@ class InterCommerceChipGroup<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: spacing,
-      runSpacing: spacing,
-      children: [
-        for (final option in options)
-          InterCommerceChoiceChip(
-            label: labelBuilder(option),
-            selected: option == value,
-            shape: shape,
-            onSelected: (_) => onChanged(option),
-          ),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          for (var i = 0; i < options.length; i++) ...[
+            if (i > 0) SizedBox(width: spacing),
+            InterCommerceChoiceChip(
+              label: labelBuilder(options[i]),
+              selected: options[i] == value,
+              shape: shape,
+              onSelected: (_) => onChanged(options[i]),
+            ),
+          ],
+        ],
+      ),
     );
   }
 }
